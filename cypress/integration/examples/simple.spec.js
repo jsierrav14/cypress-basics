@@ -1,3 +1,4 @@
+
 describe('My firsts simple test with cypress', () => {
     it('True should be true', () => {
        expect(true).to.equal(true)
@@ -17,4 +18,19 @@ describe('Browser Actions', ()=>{
     it('Should load correct url',()=>{
         cy.visit('https://reactjs.org/',{timeout:10000})
     })
+
+    it('should check correct url', ()=>{
+        cy.url().should('include','reactjs.org')
+    })
+    it('should wait for 3 seconds', ()=>{
+        cy.wait(3000)
+    })
+
+    it('should pause the execution',()=>{
+        cy.pause()
+    })
+    it('should check for the current element on the page',()=>{
+        cy.get('h1').should('be.visible')
+    })
+    
 })
